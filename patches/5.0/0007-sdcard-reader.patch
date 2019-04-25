@@ -1,14 +1,14 @@
 diff --git a/drivers/usb/core/hub.c b/drivers/usb/core/hub.c
-index 1d1e61e98..409bce666 100644
+index 409bce666..1d1e61e98 100644
 --- a/drivers/usb/core/hub.c
 +++ b/drivers/usb/core/hub.c
-@@ -4163,7 +4163,8 @@ void usb_enable_lpm(struct usb_device *udev)
+@@ -4163,8 +4163,7 @@ void usb_enable_lpm(struct usb_device *udev)
  	if (!udev || !udev->parent ||
  			udev->speed < USB_SPEED_SUPER ||
  			!udev->lpm_capable ||
--			udev->state < USB_STATE_DEFAULT)
-+			udev->state < USB_STATE_DEFAULT ||
-+			!udev->bos || !udev->bos->ss_cap)
+-			udev->state < USB_STATE_DEFAULT ||
+-			!udev->bos || !udev->bos->ss_cap)
++			udev->state < USB_STATE_DEFAULT)
  		return;
  
  	udev->lpm_disable_count--;
