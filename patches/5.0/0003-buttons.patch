@@ -1,15 +1,5 @@
-From 5351e555fb2119dcf04c436b3828e1e99fcdba34 Mon Sep 17 00:00:00 2001
-From: Jake Day <jake@ninebysix.com>
-Date: Wed, 13 Mar 2019 15:15:47 -0400
-Subject: [PATCH 03/11] buttons
-
----
- drivers/input/misc/soc_button_array.c     | 84 +++++++++++++++++++++--
- drivers/platform/x86/surfacepro3_button.c | 36 ++++++++++
- 2 files changed, 114 insertions(+), 6 deletions(-)
-
 diff --git a/drivers/input/misc/soc_button_array.c b/drivers/input/misc/soc_button_array.c
-index 23520df7650f..1ea239ff426d 100644
+index 55cd6e0b4..9440b5cd5 100644
 --- a/drivers/input/misc/soc_button_array.c
 +++ b/drivers/input/misc/soc_button_array.c
 @@ -29,12 +29,24 @@ struct soc_button_info {
@@ -142,7 +132,7 @@ index 23520df7650f..1ea239ff426d 100644
  };
  
 diff --git a/drivers/platform/x86/surfacepro3_button.c b/drivers/platform/x86/surfacepro3_button.c
-index 1b491690ce07..b67f559ee209 100644
+index 1b491690c..b67f559ee 100644
 --- a/drivers/platform/x86/surfacepro3_button.c
 +++ b/drivers/platform/x86/surfacepro3_button.c
 @@ -24,6 +24,12 @@
@@ -202,6 +192,3 @@ index 1b491690ce07..b67f559ee209 100644
  	button = kzalloc(sizeof(struct surface_button), GFP_KERNEL);
  	if (!button)
  		return -ENOMEM;
--- 
-2.19.1
-
